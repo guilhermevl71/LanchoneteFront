@@ -1,0 +1,36 @@
+<section>
+    <div class="teste">
+  <div class="mb-3">
+    <button class="btn btn-link" onclick="history.back()">
+      <i class="bi bi-arrow-left" style="font-size: 1.75rem;"></i>
+    </button>
+  </div>
+  <div class="container-img">
+    <img class="imagem" src="assets/ranger.png" alt="">
+  </div>
+  <div class="container-form">
+    <div class="geral">
+        <img class="imagem" src="assets/ford.png" alt="logo da ford">
+        <div class="container-formulario">
+            <div class="container-titulo">
+            <p class="titulo">Boas-vindas</p>
+            </div>
+            <div class="input-group mb-3 teste">
+            <span class="input-group-text" id="basic-addon1">
+                <i class="bi bi-person"></i>
+            </span>
+            <input [(ngModel)]="nome" type="text" class="form-control" placeholder="Insira seu e-mail" aria-label="Usuário" aria-describedby="basic-addon1">
+            </div>
+            <div class="input-group mb-3 teste">
+            <span class="input-group-text" id="basic-addon1">
+                <i class="bi bi-lock"></i>
+            </span>
+            <input [(ngModel)]="senha" type="password" class="form-control" placeholder="Insira sua senha" aria-label="Usuário" aria-describedby="basic-addon1">
+            </div>
+            <button class="btn btn-primary botao"><b>Entrar</b></button>
+            <div *ngIf="erro" class="text-danger">{{ "aaaaaa" }}</div>
+        </div>
+    </div>
+  </div>
+</div>
+</section>
