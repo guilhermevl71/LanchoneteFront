@@ -1,0 +1,82 @@
+.teste {
+    display: flex;
+}
+
+.container-img {
+    display: flex;
+    align-items: center;
+}
+
+.imagem {
+    width: 50%;
+    opacity: 50%;
+}
+
+
+
+.geral {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 200px;
+    background-color: #f0f0f0;
+    height: 100vh;
+    padding-top: 25px;
+}
+
+.container-formulario {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+.container-titulo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.titulo {
+    font-size: 2.25rem;
+    color: #2BB593;
+}
+
+.imagem {
+    width: 25%;
+}
+
+.botao {
+    width: 85%;
+    background-color: #2BB593;
+    border-style: none;
+}
+
+.teste {
+    width: 85%;
+}
+
+.checkbox {
+  display: flex;
+  padding-bottom: 5px;
+  gap: 2px;
+}
+
+@media(max-width: 1024px) {
+  .geral {
+    gap: 50px;
+  }
+
+  .imagem {
+    width: 30%;
+  }
+
+    .teste {
+        flex-direction: column;
+    }
+
+    .container-img {
+        height: 35vh;
+    }
+}
+

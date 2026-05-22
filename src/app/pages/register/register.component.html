@@ -1,1 +1,64 @@
-<p>register works!</p>
+<section>
+    <div class="teste">
+  <div class="mb-3">
+    <button class="btn btn-link" onclick="history.back()">
+      <i class="bi bi-arrow-left" style="font-size: 1.75rem;"></i>
+    </button>
+  </div>
+  <div class="container-img">
+    <img class="imagem" src="assets/ranger.png" alt="">
+  </div>
+  <div class="container-form">
+    <div class="geral">
+        <img class="imagem" src="assets/ford.png" alt="logo da ford">
+        <div class="container-formulario">
+            <div class="container-titulo">
+              <p class="titulo">Boas-vindas</p>
+            </div>
+            <div class="input-group mb-3 teste">
+              <span class="input-group-text" id="basic-addon1">
+                  <i class="bi bi-person"></i>
+              </span>
+              <input class="form-control"  [(ngModel)]="nome" id="InputNome" #nomeinput="ngModel" [ngClass]="{'is-invalid' : nomeinput.invalid && nomeinput.touched}" type="text" placeholder="Insira seu nome" aria-label="Usuário" aria-describedby="basic-addon1">
+              <div *ngIf="nome.length < 2 && nomeinput.touched" class="invalid-feedback">
+                Por favor, Digite um Nome
+            </div>
+            </div>
+            <div class="input-group mb-3 teste">
+              <span class="input-group-text" id="basic-addon1">
+                  <i class="bi bi-envelope"></i>
+              </span>
+              <input class="form-control" id="InputEmail" #emailinput="ngModel" [(ngModel)]="email" type="text" placeholder="Insira seu e-mail" aria-label="Usuário" aria-describedby="basic-addon1" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+              <div class="invalid-feedback" *ngIf="emailinput.errors?.['pattern'] && emailinput.touched">
+                  Por Favor, digite um email valido.
+              </div>
+            </div>
+            <div class="input-group mb-3 teste">
+              <span class="input-group-text" id="basic-addon1">
+                  <i class="bi bi-lock"></i>
+              </span>
+              <input [(ngModel)]="senha" class="form-control" id="SenhaInput" #senhainput="ngModel" type="password" placeholder="Insira sua senha" aria-label="Usuário" aria-describedby="basic-addon1">
+              <div class="invalid-feedback" *ngIf="senha.length < 6 && senhainput.touched">
+                Por favor, Digite uma senha valida.
+              </div>
+            </div>
+            <div class="input-group mb-3 teste">
+              <span class="input-group-text" id="basic-addon1">
+                  <i class="bi bi-shield-check"></i>
+              </span>
+              <input [(ngModel)]="confirmarsenha" class="form-control" #confirmarsenhainput="ngModel" [ngClass]="{'is-invalid' : confirmarsenha != senha && confirmarsenhainput.touched}" type="password" placeholder="Confirmar Senha" aria-label="Confirmar Senha" aria-describedby="basic-addon1">
+            </div>
+            <div class="container-termos">
+                <p class="paragrafo-termo">Ao clicar em "criar conta" você concorda com nossos</p>
+                <div class="aceite">
+                    <input class="checkbox" type="checkbox" [(ngModel)]="ischecked" name="termos">
+                    <p class="paragrafo-aceite">Sim, eu li e concordo os termos</p>
+                </div>
+            </div>
+            <button class="btn btn-primary botao"><b>Entrar</b></button>
+            <div *ngIf="erro" class="text-danger">{{ "aaaaaa" }}</div>
+        </div>
+    </div>
+  </div>
+</div>
+</section>
