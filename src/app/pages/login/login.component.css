@@ -1,15 +1,24 @@
-.teste {
+section {
     display: flex;
 }
 
 .container-img {
     display: flex;
+    justify-content: center;
     align-items: center;
+    height: 100vh;
+    width: 100%;
 }
 
 .imagem {
-    width: 98%;
-    opacity: 50%;
+    transform: scale(3.5);
+    margin-top: 40px;
+}
+
+.imagem2 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 
@@ -18,23 +27,24 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 200px;
+    gap: 150px;
     background-color: #f0f0f0;
     height: 100vh;
     padding-top: 25px;
+    width: 20%;
 }
+
 
 .container-formulario {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
 }
 
 .container-titulo {
     display: flex;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .titulo {
@@ -47,7 +57,7 @@
 }
 
 .botao {
-    width: 85%;
+    width: 95%;
     background-color: #2BB593;
     border-style: none;
 }
@@ -60,6 +70,37 @@
   display: flex;
   padding-bottom: 5px;
   gap: 2px;
+}
+
+.container-termos {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    margin-bottom: 15px;
+}
+
+.aceite {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-bottom: 7px;
+}
+
+.paragrafo-termo {
+    font-size: 0.75rem;
+    height: 0;
+    padding-left: 1px;
+    opacity: 50%;
+}
+
+.paragrafo-aceite {
+    font-size: 0.7rem;
+    height: 0;
+    padding-left: 1px;
+}
+
+.checkbox {
+    transform: scale(1.1);
 }
 
 @media(max-width: 1024px) {
