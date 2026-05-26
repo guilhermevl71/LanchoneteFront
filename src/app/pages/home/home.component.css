@@ -1,0 +1,279 @@
+app-navbar {
+  display: none;
+}
+
+nav {
+  display: flex;
+  gap: 1.7rem;
+  position: absolute;
+  left: 50%;
+  top: 3.5%;
+}
+
+.cabecalho__link {
+  font-family: var(--font-primaria);
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  font-weight: 600;
+  font-size: 0.99rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.cabecalho__link:hover {
+  color: #d1d1d1;
+}
+
+.image { /* quando for deixa responsivo apenas muda o heigh de vh para px eu acho, ou puxa mx heigh ou colocar auto */
+  height: 100vh;
+  object-fit: cover;
+}
+
+.container-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  top: 1%;
+  left: 2%;
+  gap: 10px;
+  max-width: 50%;
+}
+
+.logo {
+  width: 35%;
+}
+
+.container-texto {
+  justify-content: center;
+}
+
+.titulo {
+  color: white;
+  font-size: 3.25rem;
+}
+
+.paragrafo {
+  font-size: 1.75rem;
+  color: white;
+}
+
+.link {
+  text-decoration: none;
+  color: black;
+  font-family: var(--font-secundaria);
+  font-weight: 600;
+  font-size: 1.25rem;
+  background-color: white;
+  border-radius: 48px;
+  padding: 10px 32px 10px 32px;
+  letter-spacing: 1.5px;
+  transition: background-color 0.5s ease;
+}
+
+.link:hover {
+  background-color: #d1d1d1;
+}
+
+.carro-geral {
+  display: flex;
+  align-items: center;
+}
+
+.carro-texto {
+  padding-top: 5px;
+}
+
+.carro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.ajuste {
+  gap: 10px;
+}
+
+.carro-img {
+  width: 40%;
+}
+
+.carro-titulo {
+  font-size: 1.25rem;
+}
+
+.carro-paragrafo {
+  font-size: 0.8rem;
+  font-family: var(--font-secundaria);
+  color: #747474;
+  max-height: 1px;
+}
+
+.carro-preco {
+  font-size: 1.05rem;
+  font-family: var(--font-primaria);
+  color: black;
+}
+
+.carro-link {
+  text-decoration: none;
+  color: white;
+  font-family: var(--font-secundaria);
+  font-weight: 600;
+  font-size: 1.15rem;
+  background-color: rgb(255, 2, 2);
+  border-radius: 48px;
+  padding: 8px 50px 8px 50px;
+  letter-spacing: 1.5px;
+  transition: opacity 0.5s ease;
+}
+
+.carro-link:hover {
+  opacity: 50%;
+}
+
+@media(max-width: 600px) {
+  nav {
+    display: none;
+  }
+
+  app-navbar {
+    display: block;
+    background-color: black;
+  }
+
+  .carousel {
+    height: 60vh;
+  }
+
+  .image {
+    height: 60vh;
+  }
+
+  .ranger {
+    object-position: 75%;
+  }
+
+  .march {
+    object-position: 85%;
+  }
+
+  .bronco {
+    object-position: 0.5%;
+  }
+
+  .container-info {
+    top: 82%;
+    left: 25%;
+  }
+
+  .container-texto {
+    width: 300px;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .titulo {
+    display: none;
+    font-size: 3rem;
+  }
+
+  .paragrafo {
+    display: none;
+    font-size: 1.75rem;
+  }
+
+  .container-link {
+    width: 250px;
+  }
+
+  .link {
+    font-size: 0.90rem;
+  }
+
+  .carro-geral {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+}
+
+@media(min-width:601px) and (max-width: 800px) {
+  nav {
+    transform: scale(0.6);
+    left: 48%;
+  }
+
+  .ranger {
+    object-position: 72%;
+  }
+
+  .march {
+    object-position: 85%;
+  }
+
+  .bronco {
+    object-position: 1%;
+  }
+
+  .logo {
+    transform: scale(1.2);
+  }
+
+  .container-info {
+    left: 2%;
+  }
+
+  .titulo {
+    font-size: 2.5rem;
+  }
+
+  .paragrafo {
+    font-size: 1.75rem;
+  }
+
+  .link {
+    font-size: 0.8rem;
+  }
+
+  .carro-geral {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+@media(min-width:801px) and (max-width: 1024px) {
+  nav {
+    transform: scale(0.7);
+    left: 55%;
+  }
+
+  .march {
+    object-position: 85%;
+  }
+
+  .bronco {
+    object-position: 1%;
+  }
+
+}
+
+@media(min-width:1025px) and (max-width: 1400px) {
+  nav {
+    transform: scale(0.8);
+    left: 62%;
+  }
+
+}
+
+@media(min-width:1401px) and (max-width: 1900px) {
+  nav {
+    transform: scale(0.9);
+    left: 72%;
+  }
+
+}

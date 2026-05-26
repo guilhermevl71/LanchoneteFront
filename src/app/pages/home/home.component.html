@@ -1,0 +1,90 @@
+<section>
+    <!-- <app-navbar></app-navbar> -->
+  <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" data-bs-pause="false">
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="0" class="active" aria-current="true"></button>
+      <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="1"></button>
+      <!-- <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="2"></button> -->
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" data-bs-interval="10000">
+        <img src="assets/carrosel1.png" class="d-block w-100 image ranger" alt="...">
+        <nav>
+          <a class="cabecalho__link" [routerLink]="['/home']" routerLinkActive="router-link-active">HOME</a>
+          <a class="nav-link dropdown-toggle cabecalho__link" href="#" id="veiculosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          CARDAPIO
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="veiculosDropdown">
+              <li><a class="dropdown-item" [routerLink]="['/veiculos/bronco']" routerLinkActive="router-link-active" >Lanches</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/veiculos/ranger']" routerLinkActive="router-link-active" >Bebidas</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/veiculos/march']" routerLinkActive="router-link-active" >Sobremesas</a></li>
+          </ul>
+          <a class="cabecalho__link" [routerLink]="['/contato']" routerLinkActive="router-link-active">CONTATO</a>
+          <a class="cabecalho__link" [routerLink]="['/login']" routerLinkActive="router-link-active">LOGIN</a> <!--fazer um dropdown-->
+        </nav>
+        <div class="container-info">
+          <img src="assets/logo/logotodabranca.png" alt="" class="logo">
+          <div class="container-texto">
+            <h1 class="titulo">Ford Ranger 2023</h1>
+            <p class="paragrafo">Raça forte na terra e no asfalto!</p>
+          </div>
+          <div class="container-link">
+            <a [routerLink]="['/veiculos/ranger']" class="link" routerLinkActive="router-link-active">Explore o veiculo</a>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item" data-bs-interval="10000">
+        <img src="assets/carrosel2.png" class="d-block w-100 image march" alt="...">
+        <nav>
+          <a class="cabecalho__link" [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
+          <a class="nav-link dropdown-toggle cabecalho__link" href="#" id="veiculosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Veículos
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="veiculosDropdown">
+              <li><a class="dropdown-item" [routerLink]="['/veiculos/bronco']" routerLinkActive="router-link-active" >Ford Bronco</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/veiculos/ranger']" routerLinkActive="router-link-active" >Ford Ranger</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/veiculos/march']" routerLinkActive="router-link-active" >Mustang Mach-E</a></li>
+          </ul>
+          <a class="cabecalho__link" [routerLink]="['/contato']" routerLinkActive="router-link-active">Contato</a>
+          <a class="cabecalho__link" [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a> <!--fazer um dropdown-->
+        </nav>
+        <div class="container-info">
+          <img src="assets/logo/logotodabranca.png" alt="" class="logo">
+          <div class="container-texto">
+            <h1 class="titulo">Ford Mustang Mach-E 2023</h1>
+            <p class="paragrafo">Potência silenciosa, presença marcante</p>
+          </div>
+          <div class="container-link">
+            <a [routerLink]="['/veiculos/march']" class="link" routerLinkActive="router-link-active">Explore o veiculo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="maisvendidos">
+    <h3>Mais Vendidos foguinho</h3>
+  </div>
+  <div class="carro-geral">
+    <div class="carro">
+      <img class="carro-img" src="assets/features/combo.png" alt="">
+      <div class="carro-texto">
+        <h1 class="carro-titulo">Ford Ranger Raptor</h1>
+      </div>
+      <a class="carro-link" [routerLink]="['/veiculos/ranger']" routerLinkActive="router-link-active" >Adicionar ao carrinho</a>
+    </div>
+    <div class="carro">
+      <img class="carro-img" src="assets/features/bolo2.png" alt="">
+      <div class="carro-texto">
+        <h1 class="carro-titulo">Ford Mustang March-E</h1>
+      </div>
+      <a class="carro-link" [routerLink]="['/veiculos/march']" routerLinkActive="router-link-active" >Adicionar ao carrinho</a>
+    </div>
+    <div class="carro">
+      <img class="carro-img" src="assets/features/pastel2.png" alt="">
+      <div class="carro-texto">
+        <h1 class="carro-titulo">Ford Bronco</h1>
+      </div>
+      <a class="carro-link" [routerLink]="['/veiculos/bronco']" routerLinkActive="router-link-active">Adicionar ao carrinho</a>
+    </div>
+  </div>
+</section>
