@@ -118,7 +118,7 @@ npm i
 5. Execute o Angular:
 
 ```bash
-ng serve
+npx ng serve
 ```
 
 6. Acesse:
