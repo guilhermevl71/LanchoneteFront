@@ -1,59 +1,189 @@
-# LanchoneteFront
+# Projeto Lanchonete Novo Milênio
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.7.
+Um sistema web completo de lanchonete desenvolvido com Angular no Front-End e ASP.NET Core Web API no Back-End. O projeto possui autenticação com JWT, sistema de carrinho, cardápio dinâmico, rotas protegidas e interface responsiva utilizando Bootstrap.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Funcionalidades
+
+* 🔐 **Autenticação JWT**
+
+  * Login e registro de usuários
+  * Proteção de rotas com Guards
+  * Interceptor para envio automático do token
+
+* 🍔 **Cardápio Dinâmico**
+
+  * Separação entre bebidas e lanches
+  * Produtos carregados dinamicamente da API
+  * Utilização de `*ngFor`
+
+* 🛒 **Carrinho**
+
+  * Adicionar produtos ao carrinho
+  * Carrinho vinculado ao usuário autenticado
+  * Cálculo automático do valor total
+
+* 👨‍💼 **Área Administrativa**
+
+  * Controle de acesso por autenticação
+  * Cadastro de produtos
+
+* 🎨 **Interface Responsiva**
+
+  * Bootstrap 5
+  * Navbar com dropdown
+  * Layout moderno e responsivo
+
+---
+
+## 🛠️ Tecnologias Utilizadas
+
+### Front-End
+
+* **Angular 19**
+* **TypeScript**
+* **Bootstrap 5**
+* **Bootstrap Icons**
+* **HTML5/CSS3**
+
+### Back-End
+
+* **ASP.NET Core Web API**
+* **Entity Framework Core**
+* **MySQL**
+* **JWT Authentication**
+* **C#**
+
+---
+
+## 🧪 Como Executar
+
+# 🔧 Back-End (.NET)
+
+1. Abra o projeto Back-End no Visual Studio
+
+2. Abra o Console do Gerenciador de Pacotes
+
+if necessario {
+3. Execute a migration:
+
+```bash
+Add-Migration NomeDaMigration
+```
+}
+
+4. Atualize o banco:
+
+```bash
+Update-Database
+```
+
+5. Execute a aplicação:
+
+```bash
+Ctrl + F5
+```
+
+6. A API ficará disponível em:
+
+```bash
+https://localhost:7073
+```
+
+---
+
+# 🖥️ Front-End (Angular)
+
+1. Clone o projeto:
+
+```bash
+git clone URL_DO_REPOSITORIO
+```
+
+2. Abra o projeto no VS Code
+
+3. Entre na pasta do projeto:
+
+```bash
+cd nome-da-pasta
+```
+
+4. Instale as dependências:
+
+```bash
+npm i
+```
+
+5. Execute o Angular:
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+6. Acesse:
 
 ```bash
-ng generate component component-name
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
+
+## 🔑 Funcionalidades de Segurança
+
+* JWT Authentication
+* Guards de proteção de rotas
+* Interceptors HTTP
+* Controle de autenticação
+* Rotas públicas e privadas
+
+---
+
+## 📁 Estrutura de Pastas
 
 ```bash
-ng generate --help
+📦 LanchoneteFront
+├── src
+│   ├── app
+│   │   ├── core
+│   │   │   ├── guards
+│   │   │   ├── interceptors
+│   │   │   ├── services
+│   │   │
+│   │   ├── pages
+│   │   │   ├── login
+│   │   │   ├── register
+│   │   │   ├── bebidas
+│   │   │   ├── lanches
+│   │   │   ├── carrinho
+│   │   │   ├── admin
+│   │   │
+│   │   ├── shared
+│   │
+│   ├── assets
+
+📦 LanchoneteBackEnd
+├── Controllers
+├── Models
+├── Data
+├── Migrations
+├── Services
 ```
 
-## Building
+---
 
-To build the project run:
+## 🏁 Melhorias Futuras
 
-```bash
-ng build
-```
+* [ ] Finalização de pedidos
+* [ ] Integração com pagamento
+* [ ] Upload de imagens dos produtos
+* [ ] Sistema de pedidos em tempo real
+* [ ] Criptografia de senha com BCrypt
+* [ ] Dashboard administrativo
+* [ ] Responsividade mobile avançada
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
+## 👨‍💻 Desenvolvido por
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+**Guilherme Santos**
