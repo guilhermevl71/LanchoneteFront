@@ -7,84 +7,103 @@
       <!-- <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="2"></button> -->
     </div>
     <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="10000">
+      <div class="carousel-item active" data-bs-interval="5000">
         <img src="assets/carrosel1.png" class="d-block w-100 image ranger" alt="...">
         <nav>
-          <a class="cabecalho__link" [routerLink]="['/home']" routerLinkActive="router-link-active">HOME</a>
+          <a class="cabecalho__link" [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
           <a class="nav-link dropdown-toggle cabecalho__link" href="#" id="veiculosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          CARDAPIO
+          Cardapio
           </a>
           <ul class="dropdown-menu" aria-labelledby="veiculosDropdown">
-              <li><a class="dropdown-item" [routerLink]="['/veiculos/bronco']" routerLinkActive="router-link-active" >Lanches</a></li>
-              <li><a class="dropdown-item" [routerLink]="['/veiculos/ranger']" routerLinkActive="router-link-active" >Bebidas</a></li>
-              <li><a class="dropdown-item" [routerLink]="['/veiculos/march']" routerLinkActive="router-link-active" >Sobremesas</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/lanches']" routerLinkActive="router-link-active" >Lanches</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/bebidas']" routerLinkActive="router-link-active" >Bebidas</a></li>
           </ul>
-          <a class="cabecalho__link" [routerLink]="['/contato']" routerLinkActive="router-link-active">CONTATO</a>
-          <a class="cabecalho__link" [routerLink]="['/login']" routerLinkActive="router-link-active">LOGIN</a> <!--fazer um dropdown-->
+          <a class="cabecalho__link" [routerLink]="['/contato']" routerLinkActive="router-link-active">Contato</a>
+          <a *ngIf="!authService.isLogged()" class="cabecalho__link" [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a> <!--fazer um dropdown-->
+          <div *ngIf="authService.isLogged()" class="dropdown">
+            <button
+              class="btn dropdown-toggle d-flex align-items-center"
+              type="button"
+              id="dropdownUser"
+              data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="bi bi-person-circle me-2"></i>
+            </button>
+
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
+              <li>
+                <a (click)="authService.logout()" class="dropdown-item text-danger cursor">
+                  <i class="bi bi-box-arrow-right me-2 cursor"></i> Deslogar
+                </a>
+              </li>
+            </ul>
+          </div>
+          <a *ngIf="authService.isLogged()" class="cabecalho__link" [routerLink]="['/carrinho']" routerLinkActive="router-link-active" href=""><i class="bi bi-cart3"></i></a>
         </nav>
-        <div class="container-info">
-          <img src="assets/logo/logotodabranca.png" alt="" class="logo">
-          <div class="container-texto">
-            <h1 class="titulo">Ford Ranger 2023</h1>
-            <p class="paragrafo">Raça forte na terra e no asfalto!</p>
-          </div>
-          <div class="container-link">
-            <a [routerLink]="['/veiculos/ranger']" class="link" routerLinkActive="router-link-active">Explore o veiculo</a>
-          </div>
-        </div>
       </div>
-      <div class="carousel-item" data-bs-interval="10000">
+      <div class="carousel-item" data-bs-interval="5000">
         <img src="assets/carrosel2.png" class="d-block w-100 image march" alt="...">
         <nav>
           <a class="cabecalho__link" [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
           <a class="nav-link dropdown-toggle cabecalho__link" href="#" id="veiculosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Veículos
+          Cardapio
           </a>
           <ul class="dropdown-menu" aria-labelledby="veiculosDropdown">
-              <li><a class="dropdown-item" [routerLink]="['/veiculos/bronco']" routerLinkActive="router-link-active" >Ford Bronco</a></li>
-              <li><a class="dropdown-item" [routerLink]="['/veiculos/ranger']" routerLinkActive="router-link-active" >Ford Ranger</a></li>
-              <li><a class="dropdown-item" [routerLink]="['/veiculos/march']" routerLinkActive="router-link-active" >Mustang Mach-E</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/lanches']" routerLinkActive="router-link-active" >Lanches</a></li>
+              <li><a class="dropdown-item" [routerLink]="['/bebidas']" routerLinkActive="router-link-active" >Bebidas</a></li>
           </ul>
           <a class="cabecalho__link" [routerLink]="['/contato']" routerLinkActive="router-link-active">Contato</a>
-          <a class="cabecalho__link" [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a> <!--fazer um dropdown-->
+          <a *ngIf="!authService.isLogged()" class="cabecalho__link" [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a> <!--fazer um dropdown-->
+          <div *ngIf="authService.isLogged()" class="dropdown">
+            <button
+              class="btn dropdown-toggle d-flex align-items-center"
+              type="button"
+              id="dropdownUser"
+              data-bs-toggle="dropdown"
+              aria-expanded="false">
+              <i class="bi bi-person-circle me-2"></i>
+            </button>
+
+            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
+              <li>
+                <a (click)="authService.logout()" class="dropdown-item text-danger cursor">
+                  <i class="bi bi-box-arrow-right me-2 cursor"></i> Deslogar
+                </a>
+              </li>
+            </ul>
+          </div>
+          <a *ngIf="authService.isLogged()" class="cabecalho__link" [routerLink]="['/carrinho']" routerLinkActive="router-link-active" href=""><i class="bi bi-cart3"></i></a>
         </nav>
-        <div class="container-info">
-          <img src="assets/logo/logotodabranca.png" alt="" class="logo">
-          <div class="container-texto">
-            <h1 class="titulo">Ford Mustang Mach-E 2023</h1>
-            <p class="paragrafo">Potência silenciosa, presença marcante</p>
-          </div>
-          <div class="container-link">
-            <a [routerLink]="['/veiculos/march']" class="link" routerLinkActive="router-link-active">Explore o veiculo</a>
-          </div>
-        </div>
       </div>
     </div>
   </div>
   <div class="maisvendidos">
-    <h3>Mais Vendidos foguinho</h3>
+    <h3 class="vendidos">Mais Vendidos <i class="bi bi-fire text-danger"></i></h3>
   </div>
   <div class="carro-geral">
     <div class="carro">
       <img class="carro-img" src="assets/features/combo.png" alt="">
       <div class="carro-texto">
-        <h1 class="carro-titulo">Ford Ranger Raptor</h1>
+        <h1 class="carro-titulo">Combo hamburger + fritas + refil</h1>
       </div>
-      <a class="carro-link" [routerLink]="['/veiculos/ranger']" routerLinkActive="router-link-active" >Adicionar ao carrinho</a>
+      <a *ngIf="authService.isLogged()" class="carro-link" [routerLink]="['/veiculos/march']" routerLinkActive="router-link-active" >Adicionar ao carrinho</a>
+      <p *ngIf="!authService.isLogged()" >Logue para adicionar ao carrinho</p>
     </div>
     <div class="carro">
       <img class="carro-img" src="assets/features/bolo2.png" alt="">
       <div class="carro-texto">
-        <h1 class="carro-titulo">Ford Mustang March-E</h1>
+        <h1 class="carro-titulo">Fatia Bolo de chocolate</h1>
       </div>
-      <a class="carro-link" [routerLink]="['/veiculos/march']" routerLinkActive="router-link-active" >Adicionar ao carrinho</a>
+      <a *ngIf="authService.isLogged()" class="carro-link" [routerLink]="['/veiculos/march']" routerLinkActive="router-link-active" >Adicionar ao carrinho</a>
+      <p *ngIf="!authService.isLogged()" >Logue para adicionar ao carrinho</p>
     </div>
     <div class="carro">
       <img class="carro-img" src="assets/features/pastel2.png" alt="">
       <div class="carro-texto">
-        <h1 class="carro-titulo">Ford Bronco</h1>
+        <h1 class="carro-titulo">Pastel de carne</h1>
       </div>
-      <a class="carro-link" [routerLink]="['/veiculos/bronco']" routerLinkActive="router-link-active">Adicionar ao carrinho</a>
+      <a *ngIf="authService.isLogged()" class="carro-link" [routerLink]="['/veiculos/march']" routerLinkActive="router-link-active" >Adicionar ao carrinho</a>
+      <p *ngIf="!authService.isLogged()" >Logue para adicionar ao carrinho</p>
     </div>
   </div>
 </section>

@@ -1,0 +1,122 @@
+/* --- ESTILOS DO MENU (Igual à Home e Lanches) --- */
+.menu-fixo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.nav-cardapio {
+  display: flex;
+  gap: 1.7rem;
+  align-items: center;
+}
+
+.cabecalho__link {
+  font-family: var(--font-primaria);
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  font-weight: 600;
+  font-size: 0.99rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.cabecalho__link:hover {
+  color: #d1d1d1;
+}
+
+.active-link {
+  color: rgb(217, 255, 0) !important; 
+}
+
+.btn {
+  color: white;
+  transform: scale(1.15);
+}
+
+.conteudo-pagina {
+  margin-top: 120px !important; 
+  padding-bottom: 50px;
+}
+
+
+/* --- ESTILOS DOS CARDS (Padronizado com a Home) --- */
+.titulo-pagina {
+  font-family: var(--font-primaria);
+  color: rgb(217, 255, 0);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+.carro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 15px;
+  padding: 20px 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.carro:hover {
+  transform: translateY(-5px);
+}
+
+.carro-img {
+  width: 55%;
+  height: auto;
+  object-fit: contain;
+  margin-bottom: 15px;
+}
+
+.carro-titulo {
+  font-family: var(--font-primaria);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.carro-paragrafo {
+  font-size: 0.9rem;
+  font-family: var(--font-secundaria);
+  color: #747474;
+  margin-bottom: 10px;
+}
+
+.carro-preco {
+  font-size: 1.4rem;
+  font-family: var(--font-primaria);
+  color: #2e7d32;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.carro-link {
+  text-decoration: none;
+  color: white;
+  font-family: var(--font-secundaria);
+  font-weight: 600;
+  font-size: 1.15rem;
+  background-color: rgb(255, 2, 2);
+  border-radius: 48px;
+  padding: 8px 50px;
+  letter-spacing: 1.5px;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+}
+
+.carro-link:hover {
+  opacity: 0.5;
+}
+
+@media(max-width: 576px) {
+  .nav-cardapio {
+    gap: 1rem;
+  }
+  .cabecalho__link {
+    font-size: 0.9rem;
+  }
+}

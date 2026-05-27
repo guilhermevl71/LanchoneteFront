@@ -1,0 +1,136 @@
+/* --- ESTILOS DO MENU (Igual ao das outras páginas) --- */
+.menu-fixo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.nav-cardapio {
+  display: flex;
+  gap: 1.7rem;
+  align-items: center;
+}
+
+.cabecalho__link {
+  font-family: var(--font-primaria);
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  font-weight: 600;
+  font-size: 0.99rem;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.cabecalho__link:hover {
+  color: #d1d1d1;
+}
+
+.btn {
+  color: white;
+  transform: scale(1.15);
+}
+
+.conteudo-pagina {
+  margin-top: 120px !important; 
+  padding-bottom: 60px;
+}
+
+/* --- ESTILOS EXCLUSIVOS DO CARRINHO (Alinhados com a Home) --- */
+.titulo-pagina {
+  font-family: var(--font-primaria);
+  color: rgb(217, 255, 0);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+
+/* Container da Tabela Arredondado */
+.tabela-container {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eef2f3;
+}
+
+.table {
+  margin-bottom: 0;
+}
+
+.table thead th {
+  font-family: var(--font-primaria);
+  font-weight: 600;
+  padding: 15px;
+  letter-spacing: 0.5px;
+}
+
+.table tbody td {
+  padding: 20px 15px;
+}
+
+.carro-paragrafo {
+  font-family: var(--font-secundaria);
+  color: #747474;
+}
+
+.carro-preco {
+  font-family: var(--font-primaria);
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+/* Box de Totalização Inferior */
+.box-total {
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid #eef2f3;
+}
+
+.texto-total {
+  font-family: var(--font-secundaria);
+  font-size: 1.1rem;
+  color: #747474;
+  font-weight: 600;
+}
+
+.valor-total {
+  font-family: var(--font-primaria);
+  font-size: 2rem;
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+/* Botão idêntico ao 'Adicionar ao carrinho' da Home */
+.carro-link {
+  text-decoration: none;
+  color: white;
+  font-family: var(--font-secundaria);
+  font-weight: 600;
+  font-size: 1.15rem;
+  background-color: rgb(255, 2, 2);
+  border-radius: 48px;
+  padding: 8px 50px;
+  letter-spacing: 1.5px;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(255, 2, 2, 0.2);
+}
+
+.carro-link:hover {
+  opacity: 0.5;
+}
+
+/* Estilização sutil para os alertas */
+.alert-customizado {
+  border-radius: 10px;
+  font-family: var(--font-secundaria);
+  font-weight: 500;
+}
+
+@media(max-width: 576px) {
+  .nav-cardapio {
+    gap: 1rem;
+  }
+}

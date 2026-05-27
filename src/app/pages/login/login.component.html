@@ -9,7 +9,7 @@
           <span class="input-group-text" id="basic-addon1">
               <i class="bi bi-envelope"></i>
           </span>
-          <input class="form-control" id="InputEmail" #emailinput="ngModel" [(ngModel)]="email" type="text" placeholder="Insira seu e-mail" aria-label="Usuário" aria-describedby="basic-addon1" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$">
+          <input class="form-control" id="InputEmail" #emailinput="ngModel" [(ngModel)]="email" type="text" placeholder="Insira seu e-mail" aria-label="Usuário" aria-describedby="basic-addon1" pattern="^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$" required>
           <div class="invalid-feedback" *ngIf="emailinput.errors?.['pattern'] && emailinput.touched">
               Por Favor, digite um email valido.
           </div>
@@ -18,16 +18,16 @@
           <span class="input-group-text" id="basic-addon1">
               <i class="bi bi-lock"></i>
           </span>
-          <input [(ngModel)]="senha" class="form-control" id="SenhaInput" #senhainput="ngModel" type="password" placeholder="Insira sua senha" aria-label="Usuário" aria-describedby="basic-addon1">
+          <input [(ngModel)]="senha" class="form-control" id="SenhaInput" #senhainput="ngModel" type="password" placeholder="Insira sua senha" aria-label="Usuário" aria-describedby="basic-addon1" required>
           <div class="invalid-feedback" *ngIf="senha.length < 6 && senhainput.touched">
             Por favor, Digite uma senha valida.
           </div>
         </div>
         <div class="container-termos">
-            <p class="paragrafo-termo">Não possui uma conta? <a href="">Cadastre-se</a></p>
+            <p class="paragrafo-termo">Não possui uma conta? <a [routerLink]="['/register']" routerLinkActive="router-link-active" >Cadastre-se</a></p>
         </div>
-        <button class="btn btn-primary botao"><b>Entrar</b></button>
-        <div *ngIf="erro" class="text-danger">{{ "aaaaaa" }}</div>
+        <button (click)="logar()" class="btn btn-primary botao"><b>Entrar</b></button>
+        <div *ngIf="erro" class="text-danger">{{ erro }}</div>
     </div>
   </div>
   <div class="container-img">

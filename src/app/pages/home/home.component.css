@@ -10,6 +10,18 @@ nav {
   top: 3.5%;
 }
 
+.dropdown {
+  display: flex;
+  position: absolute;
+  left: 110%;
+  top: -20%;
+}
+
+.btn {
+  color: white;
+  transform: scale(1.15);
+}
+
 .cabecalho__link {
   font-family: var(--font-primaria);
   color: white;
@@ -18,6 +30,16 @@ nav {
   font-size: 0.99rem;
   text-decoration: none;
   transition: color 0.3s ease;
+}
+
+.vendidos {
+  font-family: var(--font-primaria);
+  color: rgb(217, 255, 0);
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin-left: 20px;
+  margin-top: 5px;
 }
 
 .cabecalho__link:hover {

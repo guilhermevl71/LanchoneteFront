@@ -1,0 +1,67 @@
+<header class="menu-fixo bg-dark w-100 py-3 shadow-sm">
+  <div class="container d-flex justify-content-center align-items-center position-relative">
+    
+    <nav class="nav-cardapio">
+      <a class="cabecalho__link" [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
+      
+      <div class="dropdown d-inline-block">
+        <a class="nav-link dropdown-toggle cabecalho__link active-link" href="#" id="veiculosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Cardapio
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="veiculosDropdown">
+          <li><a class="dropdown-item" [routerLink]="['/lanches']" routerLinkActive="router-link-active">Lanches</a></li>
+          <li><a class="dropdown-item" [routerLink]="['/bebidas']" routerLinkActive="router-link-active">Bebidas</a></li>
+        </ul>
+      </div>
+
+      <a class="cabecalho__link" [routerLink]="['/contato']" routerLinkActive="router-link-active">Contato</a>
+      
+      <a *ngIf="!authService.isLogged()" class="cabecalho__link" [routerLink]="['/login']" routerLinkActive="router-link-active">Login</a>
+      
+      <div *ngIf="authService.isLogged()" class="dropdown d-inline-block">
+        <button class="btn dropdown-toggle d-flex align-items-center p-0" type="button" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+          <i class="bi bi-person-circle me-2"></i>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownUser">
+          <li>
+            <a (click)="authService.logout()" class="dropdown-item text-danger cursor">
+              <i class="bi bi-box-arrow-right me-2 cursor"></i> Deslogar
+            </a>
+          </li>
+        </ul>
+      </div>
+      <a *ngIf="authService.isLogged()" class="cabecalho__link" [routerLink]="['/carrinho']" routerLinkActive="router-link-active" href=""><i class="bi bi-cart3"></i></a>
+    </nav>
+
+  </div>
+</header>
+
+<div class="container conteudo-pagina">
+
+  <div class="maisvendidos text-center mb-5">
+    <h1 class="titulo-pagina">Bebidas <i class="bi bi-cup-straw text-danger"></i></h1>
+  </div>
+
+  <div class="row g-4 justify-content-center">
+    
+    <div class="col-12 col-sm-6 col-md-4" *ngFor="let bebida of bebidas">
+      <div class="carro h-100">
+        
+        <img src="assets/refrigerante.png" class="carro-img" alt="{{ bebida.nome }}">
+
+        <div class="carro-texto text-center px-3 w-100">
+          <h5 class="carro-titulo">{{ bebida.nome }}</h5>
+          <p class="carro-paragrafo">{{ bebida.tipo }}</p>
+          <h4 class="carro-preco">R$ {{ bebida.preco }}</h4>
+        </div>
+
+        <button *ngIf="authService.isLogged()" (click)="adicionarCarrinho(bebida.id)" class="carro-link border-0 mt-auto mb-3">
+          Adicionar
+        </button>
+        <p *ngIf="!authService.isLogged()"> Logue para adicionar ao carrinho </p>
+
+      </div>
+    </div>
+
+  </div>
+</div>

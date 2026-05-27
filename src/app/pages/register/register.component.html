@@ -45,8 +45,8 @@
                 <p class="paragrafo-aceite">Sim, eu li e concordo os termos</p>
             </div>
         </div>
-        <button class="btn btn-primary botao"><b>Cadastrar</b></button>
-        <div *ngIf="erro" class="text-danger">{{ "aaaaaa" }}</div>
+        <button (click)="registrar()" class="btn btn-primary botao"><b>Cadastrar</b></button>
+        <div *ngIf="erro" class="text-danger">{{ erro }}</div>
     </div>
   </div>
   <div class="container-img">
