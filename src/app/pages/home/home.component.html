@@ -7,7 +7,7 @@
       <!-- <button type="button" data-bs-target="#carouselExampleInterval" data-bs-slide-to="2"></button> -->
     </div>
     <div class="carousel-inner">
-      <div class="carousel-item active" data-bs-interval="5000">
+      <div class="carousel-item active" data-bs-interval="15000">
         <img src="assets/carrosel1.png" class="d-block w-100 image ranger" alt="...">
         <nav>
           <a class="cabecalho__link" [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
@@ -39,9 +39,10 @@
             </ul>
           </div>
           <a *ngIf="authService.isLogged()" class="cabecalho__link" [routerLink]="['/carrinho']" routerLinkActive="router-link-active" href=""><i class="bi bi-cart3"></i></a>
+          <a *ngIf="authService.isAdmin()" class="cabecalho__link" [routerLink]="['/admin']" routerLinkActive="router-link-active" href=""><i class="bi bi-speedometer2"></i></a>
         </nav>
       </div>
-      <div class="carousel-item" data-bs-interval="5000">
+      <div class="carousel-item" data-bs-interval="15000">
         <img src="assets/carrosel2.png" class="d-block w-100 image march" alt="...">
         <nav>
           <a class="cabecalho__link" [routerLink]="['/home']" routerLinkActive="router-link-active">Home</a>
@@ -73,6 +74,7 @@
             </ul>
           </div>
           <a *ngIf="authService.isLogged()" class="cabecalho__link" [routerLink]="['/carrinho']" routerLinkActive="router-link-active" href=""><i class="bi bi-cart3"></i></a>
+          <a *ngIf="authService.isAdmin()" class="cabecalho__link" [routerLink]="['/admin']" routerLinkActive="router-link-active" href=""><i class="bi bi-speedometer2"></i></a>
         </nav>
       </div>
     </div>
