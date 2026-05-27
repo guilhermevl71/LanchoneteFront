@@ -1,0 +1,140 @@
+<div class="container mt-5">
+
+    <h1 class="text-center mb-5">
+
+        Painel Admin
+
+    </h1>
+
+    <div class="card shadow p-4 mb-5">
+
+        <div class="row g-3">
+
+            <div class="col-md-4">
+
+                <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Nome"
+                    [(ngModel)]="nome">
+
+            </div>
+
+            <div class="col-md-4">
+
+                <select
+                    class="form-select"
+                    [(ngModel)]="tipo">
+
+                    <option value="">
+
+                        Selecione
+
+                    </option>
+
+                    <option value="Bebida">
+
+                        Bebida
+
+                    </option>
+
+                    <option value="Lanche">
+
+                        Lanche
+
+                    </option>
+
+                </select>
+
+            </div>
+
+            <div class="col-md-4">
+
+                <input
+                    type="number"
+                    class="form-control"
+                    placeholder="Preço"
+                    [(ngModel)]="preco">
+
+            </div>
+
+        </div>
+
+        <button
+            *ngIf="!editando"
+            class="btn btn-dark mt-4 w-100"
+            (click)="adicionarProduto()">
+
+            Adicionar Produto
+
+        </button>
+
+        <button
+            *ngIf="editando"
+            class="btn btn-warning mt-4 w-100"
+            (click)="atualizarProduto()">
+
+            Atualizar Produto
+
+        </button>
+
+    </div>
+
+    <div class="row g-4">
+
+        <div
+            class="col-md-4"
+            *ngFor="let produto of produtos">
+
+            <div class="card shadow-sm h-100">
+
+                <div class="card-body">
+
+                    <h5>
+
+                        {{ produto.nome }}
+
+                    </h5>
+
+                    <p>
+
+                        Tipo:
+                        {{ produto.tipo }}
+
+                    </p>
+
+                    <h4 class="text-success">
+
+                        R$ {{ produto.preco }}
+
+                    </h4>
+
+                    <div class="d-flex gap-2 mt-3">
+
+                        <button
+                            class="btn btn-warning w-50"
+                            (click)="editarProduto(produto)">
+
+                            Editar
+
+                        </button>
+
+                        <button
+                            class="btn btn-danger w-50"
+                            (click)="deletarProduto(produto.id)">
+
+                            Excluir
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

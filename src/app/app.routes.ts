@@ -7,6 +7,8 @@ import { BebidasComponent } from './pages/bebidas/bebidas.component';
 import { LanchesComponent } from './pages/lanches/lanches.component';
 import { CarrinhoComponent } from './pages/carrinho/carrinho.component';
 import { authGuard } from './core/guards/auth.guard';
+import { AdminComponent } from './pages/admin/admin.component';
+import { adminGuard } from './core/guards/admin.guard';
 
 export const routes: Routes = [
     {
@@ -42,5 +44,10 @@ export const routes: Routes = [
         path: 'carrinho',
         component: CarrinhoComponent,
         canActivate: [authGuard]
+    },
+    {
+        path: 'admin',
+        component: AdminComponent,
+        canActivate: [adminGuard]
     }
 ];

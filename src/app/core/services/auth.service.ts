@@ -27,4 +27,26 @@ export class AuthService {
   register(dados: any ) {
     return this.http.post(`${this.API}/Auth/register`, dados);
   }
+
+  isAdmin(): boolean {
+
+    const token = localStorage.getItem("token");
+
+    if(!token){
+
+      return false;
+
+    }
+
+    const payload = JSON.parse(
+
+      atob(token.split('.')[1])
+
+    );
+
+    return payload[
+      'http://schemas.microsoft.com/ws/2008/06/identity/claims/role'
+    ] === 'admin';
+
+  }
 }

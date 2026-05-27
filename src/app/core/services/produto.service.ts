@@ -38,12 +38,48 @@ export class ProdutoService {
 
   mostrarCarrinho(){
 
-  return this.http.get(
+    return this.http.get(
 
-    `${this.API}/MostrarCarrinho`
+      `${this.API}/MostrarCarrinho`
 
-  );
+    );
 
-}
+  }
+
+  
+
+  adicionarProduto(dados:any){
+
+    return this.http.post(
+
+      `${this.API}/produto`,
+      
+      dados
+
+    );
+
+  }
+
+  deletarProduto(id:number){
+
+    return this.http.delete(
+
+      `${this.API}/${id}`
+
+    );
+
+  }
+
+  atualizarProduto(id:number, dados:any){
+
+    return this.http.put(
+
+      `${this.API}/${id}`,
+      
+      dados
+
+    );
+
+  }
 
 }
